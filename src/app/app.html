@@ -1,6 +1,6 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" class="side-menu">
   <ion-content>
-    <ion-list no-lines>
+    <ion-list no-lines class="menu-item">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon name="{{p.icon}}"></ion-icon> &nbsp; <span>{{p.title}}</span>
       </button>
