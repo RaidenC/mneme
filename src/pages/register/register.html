@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Login</ion-title>
+    <ion-title>Create Account</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -16,11 +16,15 @@
       <ion-input type="password"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label floating>Confirm Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
   </ion-list>
 
   <div padding>
-    <button ion-button color="dark" block (click)="signIn()">Sign In</button>
+    <button ion-button color="dark" block (click)="createAccount()">Create Account</button>
   </div>
 
-  <div id="create-account" (click)="createAccount()">Create Account</div>
 </ion-content>
