@@ -4,7 +4,7 @@ import { Register } from './register';
 
 @NgModule({
   declarations: [
-    Register,
+    Register
   ],
   imports: [
     IonicPageModule.forChild(Register),
