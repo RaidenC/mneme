@@ -3,17 +3,20 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 
 @IonicPage()
 @Component({
-  selector: 'page-welcome',
-  templateUrl: 'welcome.html',
+  selector: 'page-login',
+  templateUrl: 'login.html',
 })
-export class Welcome {
+export class Login {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
-
   }
 
-  signInWithEmail() {
-    this.navCtrl.push('Login');
+  signIn() {
+    this.menuCtrl.enable(true);
+    this.navCtrl.setRoot('Home');
   }
 
+  createAccount() {
+    this.navCtrl.push('Register');
+  }
 }

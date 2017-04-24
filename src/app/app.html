@@ -1,4 +1,4 @@
-<ion-menu [content]="content" class="side-menu">
+<ion-menu [content]="content"  class="side-menu" id="side-menu" enabled="false" >
   <ion-content>
     <ion-list no-lines class="menu-item">
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
