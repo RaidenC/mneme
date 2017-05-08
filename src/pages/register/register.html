@@ -6,40 +6,27 @@
 <ion-content padding>
   <form [formGroup]="registerForm" (ngSubmit)="createAccount()">
     <ion-list>
-
       <ion-item>
-        <ion-label floating>Email address</ion-label>
+        <ion-label floating>Email address
+          <em *ngIf="!validateEmail() && email.hasError('required')"> Required</em>
+        </ion-label>
         <ion-input type="email" name="email" id="email" [formControl]="email"></ion-input>
       </ion-item>
 
-      <ion-item class="validation-error-message" color="danger" [hidden]="email.valid || email.untouched">
-        <div [hidden]="!email.hasError('required')">
-          email is required.
-        </div>
-      </ion-item>
-
       <ion-item>
-        <ion-label floating>Password</ion-label>
+        <ion-label floating>Password
+          <em *ngIf="!validatePassword() && password.hasError('required')"> Required</em>
+        </ion-label>
         <ion-input type="password" name="password" id="password" [formControl]="password"></ion-input>
       </ion-item>
 
-      <ion-item class="validation-error-message" color="danger" [hidden]="password.valid || password.untouched">
-        <div [hidden]="!password.hasError('required')">
-          The password is required.
-        </div>
-      </ion-item>
-
       <ion-item>
-        <ion-label floating>Confirm Password</ion-label>
+        <ion-label floating>Confirm Password
+          <em *ngIf="!confirmPassword.untouched && confirmPassword.hasError('required')"> Required</em>
+          <em *ngIf="confirmPassword.hasError('mismatchedPassword')"> not matching</em>
+        </ion-label>
         <ion-input type="password" name="confirmPassword" id="confirmPassword" [formControl]="confirmPassword"></ion-input>
       </ion-item>
-
-      <ion-item class="validation-error-message" color="danger" [hidden]="confirmPassword.valid || confirmPassword.untouched">
-        <div [hidden]="!confirmPassword.hasError('mismatchedPassword')">
-          The passwords must match
-        </div>
-      </ion-item>
-
     </ion-list>
 
     <div padding>
